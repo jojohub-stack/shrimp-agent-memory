@@ -3,11 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent Office - Space Theme</title>
-  <link rel="stylesheet" href="src/App.css?v=2">
+  <title>Agent Office - Star Wars Theme</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a3a 100%);
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    #app { width: 100vw; height: 100vh; position: relative; }
+    
+    /* 天體 */
+    .celestial-body { position: absolute; border-radius: 50%; z-index: 100; pointer-events: none; }
+    .neptune { width: 70px; height: 70px; top: 12%; left: 60%; background: linear-gradient(135deg, #6b8cff 0%, #2d4a9e 100%); box-shadow: 0 0 30px rgba(107, 140, 255, 0.5); }
+    .jupiter { width: 55px; height: 55px; top: 25%; left: 10%; background: linear-gradient(135deg, #f5d7a8 0%, #8b6b4a 100%); box-shadow: 0 0 25px rgba(245, 215, 168, 0.4); }
+    .callisto { width: 25px; height: 25px; bottom: 20%; left: 15%; background: linear-gradient(135deg, #c9b8a8 0%, #7d6858 100%); box-shadow: 0 0 15px rgba(201, 184, 168, 0.3); }
+    .saturn { width: 120px; height: 120px; bottom: 10%; right: 10%; background: linear-gradient(135deg, #f4e4c1 0%, #c9a86a 100%); box-shadow: 0 0 40px rgba(244, 228, 193, 0.5); }
+    .saturn-ring { position: absolute; width: 180px; height: 60px; border: 8px solid rgba(210, 180, 140, 0.6); border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-20deg); }
+    
+    /* 太空船 */
+    .spaceship { position: absolute; top: 40%; left: 45%; font-size: 40px; z-index: 101; animation: float 3s ease-in-out infinite; }
+    .ufo { position: absolute; top: 30%; right: 30%; font-size: 35px; z-index: 101; animation: float 4s ease-in-out infinite reverse; }
+    
+    /* 角色 */
+    .pixel-character { position: absolute; width: 40px !important; height: 40px !important; z-index: 50; pointer-events: none; filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)); }
+    .pixel-character svg { width: 40px !important; height: 40px !important; image-rendering: pixelated; }
+    .agent-label { position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%); font-size: 10px; color: white; white-space: nowrap; text-shadow: 0 0 5px rgba(0, 0, 0, 0.8); }
+    
+    /* 動畫 */
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    @keyframes fly-horizontal { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(180px); } 50% { transform: translateX(-80px); } 75% { transform: translateX(120px); } }
+    @keyframes fly-vertical { 0%, 100% { transform: translateY(0); } 25% { transform: translateY(-160px); } 50% { transform: translateY(70px); } 75% { transform: translateY(-100px); } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    
+    .agent-fly { animation: fly-horizontal 8s ease-in-out infinite, fly-vertical 6s ease-in-out infinite; }
+    .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+    .star { position: absolute; background: white; border-radius: 50%; animation: twinkle 2s ease-in-out infinite; }
+  </style>
 </head>
 <body>
   <div id="app"></div>
-  <script src="src/App.js"></script>
+  <script src="src/App.js?v=2"></script>
 </body>
 </html>
