@@ -1,0 +1,2 @@
+{"timestamp": "2026-03-16T15:56:19.554557", "action": "output_blocked", "service": "telegram", "redaction_count": 2, "original_length": 58, "sanitized_length": 21}
+{"timestamp": "2026-03-19T08:51:51.514195", "action": "output_blocked", "service": "telegram", "redaction_count": 4, "original_length": 112, "sanitized_length": 117}

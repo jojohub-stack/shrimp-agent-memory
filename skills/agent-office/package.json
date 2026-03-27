@@ -1,0 +1,14 @@
+{
+  "name": "agent-office",
+  "version": "1.0.0",
+  "description": "Agent Office - AI Agents Visualization Dashboard (Space Theme)",
+  "main": "server.cjs",
+  "scripts": {
+    "start": "node server.cjs",
+    "build": "echo 'No build step - static files only'",
+    "dev": "node server.cjs"
+  },
+  "keywords": ["agent", "office", "visualization"],
+  "author": "Rene",
+  "license": "MIT"
+}
