@@ -144,7 +144,7 @@ function createStarWarsCharacter(agent) {
   
   return `
     <div class="pixel-character agent-fly" style="left: ${left}%; top: ${top}%;">
-      <svg viewBox="0 0 32 32" style="width: 30px !important; height: 30px !important;" shape-rendering="crispEdges">
+      <svg viewBox="0 0 32 32" style="width: 40px !important; height: 40px !important;" shape-rendering="crispEdges">
         ${svgContent}
       </svg>
       <div class="agent-label">${agent.name}</div>

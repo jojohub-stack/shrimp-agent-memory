@@ -105,15 +105,17 @@ body {
 
 .pixel-character {
   position: absolute;
-  width: 30px !important;
-  height: 30px !important;
+  width: 40px !important;
+  height: 40px !important;
   z-index: 50;
   pointer-events: none;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
 }
 
 .pixel-character svg {
-  width: 30px !important;
-  height: 30px !important;
+  width: 40px !important;
+  height: 40px !important;
+  image-rendering: pixelated;
 }
 
 /* ========== 飛行動畫 ========== */
