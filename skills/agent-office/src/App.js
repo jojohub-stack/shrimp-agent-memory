@@ -25,11 +25,11 @@ const WORK_STATS = {
 
 // 日誌消息
 let logMessages = [
-  { time: '下午 07:30', agent: '絕地武士', project: '系統監控', message: '開始掃描系統狀態', type: 'info' },
+  { time: '下午 07:30', agent: '絕地武士', project: '系統監控', message: '掃描系統狀態', type: 'info' },
   { time: '下午 07:31', agent: '西斯大帝', project: '安全防護', message: '檢測到異常流量', type: 'warning' },
   { time: '下午 07:31', agent: 'R2-D2', project: '安全防護', message: '修復安全漏洞', type: 'success' },
   { time: '下午 07:32', agent: '風暴兵', project: '巡邏任務', message: '巡邏區域 A-7', type: 'info' },
-  { time: '下午 07:32', agent: '尤達', project: '代碼審查', message: '代碼審查完成', type: 'success' },
+  { time: '下午 07:32', agent: '尤達', project: '代碼審查', message: '審查 PR #42', type: 'success' },
 ];
 
 function createStarWarsCharacter(agent) {
@@ -287,13 +287,20 @@ function init() {
   setInterval(() => {
     const agents = ['絕地武士', '西斯大帝', '風暴兵', '尤達', '達斯維達', 'R2-D2', 'C-3PO'];
     const projects = ['系統監控', '安全防護', '巡邏任務', '代碼審查', '數據分析', '優化任務'];
-    const messages = ['掃描系統', '檢測異常', '修復漏洞', '巡邏中', '代碼審查', '數據分析', '優化完成'];
+    const actions = {
+      '系統監控': ['掃描系統狀態', '檢測 CPU 使用率', '監控記憶體用量', '檢查磁碟空間'],
+      '安全防護': ['修復安全漏洞', '阻擋異常流量', '更新防火牆規則', '掃描惡意程式'],
+      '巡邏任務': ['巡邏區域 A-7', '檢查節點狀態', '驗證服務運行', '清理暫存檔案'],
+      '代碼審查': ['審查 PR #42', '優化迴圈效能', '修復空指針錯誤', '重構模組結構'],
+      '數據分析': ['分析使用者行為', '生成報表圖表', '計算轉換率', '追蹤關鍵指標'],
+      '優化任務': ['優化資料庫查詢', '壓縮靜態資源', '快取熱門資料', '調整負載平衡']
+    };
     const types = ['info', 'warning', 'success'];
     const randomAgent = agents[Math.floor(Math.random() * agents.length)];
     const randomProject = projects[Math.floor(Math.random() * projects.length)];
-    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    const randomAction = actions[randomProject][Math.floor(Math.random() * actions[randomProject].length)];
     const randomType = types[Math.floor(Math.random() * types.length)];
-    addLogMessage(randomAgent, randomProject, randomMessage, randomType);
+    addLogMessage(randomAgent, randomProject, randomAction, randomType);
   }, 5000);
   
   console.log('🚀 Agent Office - Star Wars Theme initialized');
