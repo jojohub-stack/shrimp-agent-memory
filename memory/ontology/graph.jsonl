@@ -1,0 +1,19 @@
+{"id": "person_rene", "type": "Person", "name": "Rene", "username": "phrene", "timezone": "Asia/Taipei", "created": "2026-03-27"}
+{"id": "project_grid_trader", "type": "Project", "name": "網格交易系統", "status": "running", "path": "skills/grid-trader/", "mode": "paper_trading"}
+{"id": "project_pal", "type": "Project", "name": "P.A.L. 投資監控", "status": "running", "path": "skills/pal/"}
+{"id": "project_agent_office", "type": "Project", "name": "Agent Office", "status": "running", "port": 8788, "url": "https://rene.skin"}
+{"id": "stock_5388", "type": "Stock", "name": "眾達-KY", "code": "5388.TW", "rating": "buy", "target_price": 320, "current_price": 78}
+{"id": "crypto_sol", "type": "Crypto", "name": "Solana", "symbol": "SOL", "use": "grid_trading"}
+{"id": "crypto_fet", "type": "Crypto", "name": "Fetch.ai", "symbol": "FET", "use": "grid_trading"}
+{"id": "crypto_pepe", "type": "Crypto", "name": "Pepe", "symbol": "PEPE", "use": "grid_trading"}
+{"id": "skill_grid_trader", "type": "Skill", "name": "grid-trader", "status": "active"}
+{"id": "skill_gog", "type": "Skill", "name": "gog", "status": "active", "note": "Google Workspace"}
+{"id": "skill_pal", "type": "Skill", "name": "pal", "status": "active"}
+{"id": "skill_self_learning", "type": "Skill", "name": "self-learning-system", "status": "active", "created": "2026-03-27"}
+{"id": "rel_rene_grid", "type": "Relationship", "from": "person_rene", "to": "project_grid_trader", "relation": "OWNS"}
+{"id": "rel_rene_pal", "type": "Relationship", "from": "person_rene", "to": "project_pal", "relation": "OWNS"}
+{"id": "rel_rene_office", "type": "Relationship", "from": "person_rene", "to": "project_agent_office", "relation": "OWNS"}
+{"id": "rel_rene_5388", "type": "Relationship", "from": "person_rene", "to": "stock_5388", "relation": "INVESTS_IN"}
+{"id": "rel_grid_sol", "type": "Relationship", "from": "project_grid_trader", "to": "crypto_sol", "relation": "TRADES"}
+{"id": "rel_grid_fet", "type": "Relationship", "from": "project_grid_trader", "to": "crypto_fet", "relation": "TRADES"}
+{"id": "rel_grid_pepe", "type": "Relationship", "from": "project_grid_trader", "to": "crypto_pepe", "relation": "TRADES"}
