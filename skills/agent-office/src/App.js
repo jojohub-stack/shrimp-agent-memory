@@ -25,11 +25,11 @@ const WORK_STATS = {
 
 // 日誌消息
 let logMessages = [
-  { time: '下午 07:30', agent: '絕地武士', project: '系統監控', message: '掃描系統狀態', type: 'info' },
-  { time: '下午 07:31', agent: '西斯大帝', project: '安全防護', message: '檢測到異常流量', type: 'warning' },
-  { time: '下午 07:31', agent: 'R2-D2', project: '安全防護', message: '修復安全漏洞', type: 'success' },
-  { time: '下午 07:32', agent: '風暴兵', project: '巡邏任務', message: '巡邏區域 A-7', type: 'info' },
-  { time: '下午 07:32', agent: '尤達', project: '代碼審查', message: '審查 PR #42', type: 'success' },
+  { time: '下午 07:30', agent: '絕地武士', project: 'Gateway 服務', message: '重啟 Gateway', type: 'info' },
+  { time: '下午 07:31', agent: '西斯大帝', project: '安全防護', message: '掃描機密詞', type: 'warning' },
+  { time: '下午 07:31', agent: 'R2-D2', project: '網格交易', message: '執行買入訂單', type: 'success' },
+  { time: '下午 07:32', agent: '風暴兵', project: 'Cron 排程', message: '執行定時任務', type: 'info' },
+  { time: '下午 07:32', agent: '尤達', project: 'GitHub 同步', message: '推送 commits', type: 'success' },
 ];
 
 function createStarWarsCharacter(agent) {
@@ -286,14 +286,21 @@ function init() {
   // 模擬日誌更新
   setInterval(() => {
     const agents = ['絕地武士', '西斯大帝', '風暴兵', '尤達', '達斯維達', 'R2-D2', 'C-3PO'];
-    const projects = ['系統監控', '安全防護', '巡邏任務', '代碼審查', '數據分析', '優化任務'];
+    const projects = [
+      'Gateway 服務', 'Cron 排程', '瀏覽器自動化', '記憶系統', '技能管理',
+      'Notion 整合', '網格交易', 'GitHub 同步', '系統監控', '安全防護'
+    ];
     const actions = {
-      '系統監控': ['掃描系統狀態', '檢測 CPU 使用率', '監控記憶體用量', '檢查磁碟空間'],
-      '安全防護': ['修復安全漏洞', '阻擋異常流量', '更新防火牆規則', '掃描惡意程式'],
-      '巡邏任務': ['巡邏區域 A-7', '檢查節點狀態', '驗證服務運行', '清理暫存檔案'],
-      '代碼審查': ['審查 PR #42', '優化迴圈效能', '修復空指針錯誤', '重構模組結構'],
-      '數據分析': ['分析使用者行為', '生成報表圖表', '計算轉換率', '追蹤關鍵指標'],
-      '優化任務': ['優化資料庫查詢', '壓縮靜態資源', '快取熱門資料', '調整負載平衡']
+      'Gateway 服務': ['重啟 Gateway', '檢查 WebSocket 連線', '更新配置', '清理 session'],
+      'Cron 排程': ['執行定時任務', '更新 cron job', '檢查排程狀態', '發送提醒通知'],
+      '瀏覽器自動化': ['開啟網頁', '截取螢幕快照', '執行點擊操作', '填寫表單資料'],
+      '記憶系統': ['寫入 MEMORY.md', '更新 ontology', '同步 Memoria', '清理舊記憶'],
+      '技能管理': ['安裝新 skill', '更新 skill 版本', 'vetting 安全检查', '發布到 ClawHub'],
+      'Notion 整合': ['同步資料庫', '建立新頁面', '更新內容', '匯出報表'],
+      '網格交易': ['執行買入訂單', '執行賣出訂單', '調整網格區間', '計算未實現損益'],
+      'GitHub 同步': ['推送 commits', '建立 PR', '合併分支', '同步 repositories'],
+      '系統監控': ['檢查 CPU 使用率', '監控記憶體用量', '檢查磁碟空間', '監控服務狀態'],
+      '安全防護': ['掃描機密詞', '檢查 API key', '驗證權限', '更新防火牆規則']
     };
     const types = ['info', 'warning', 'success'];
     const randomAgent = agents[Math.floor(Math.random() * agents.length)];
