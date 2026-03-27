@@ -270,6 +270,7 @@ function init() {
     <div class="celestial-body saturn">
       <div class="saturn-ring"></div>
     </div>
+    <div class="celestial-body earth" title="地球"></div>
     
     <!-- 太空船 -->
     <div class="spaceship">🚀</div>
