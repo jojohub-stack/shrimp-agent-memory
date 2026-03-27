@@ -25,11 +25,11 @@ const WORK_STATS = {
 
 // 日誌消息
 let logMessages = [
-  { time: '下午 07:30', agent: '絕地武士', message: '開始掃描系統狀態', type: 'info' },
-  { time: '下午 07:31', agent: '西斯大帝', message: '檢測到異常流量', type: 'warning' },
-  { time: '下午 07:31', agent: 'R2-D2', message: '修復安全漏洞', type: 'success' },
-  { time: '下午 07:32', agent: '風暴兵', message: '巡邏區域 A-7', type: 'info' },
-  { time: '下午 07:32', agent: '尤達', message: '代碼審查完成', type: 'success' },
+  { time: '下午 07:30', agent: '絕地武士', project: '系統監控', message: '開始掃描系統狀態', type: 'info' },
+  { time: '下午 07:31', agent: '西斯大帝', project: '安全防護', message: '檢測到異常流量', type: 'warning' },
+  { time: '下午 07:31', agent: 'R2-D2', project: '安全防護', message: '修復安全漏洞', type: 'success' },
+  { time: '下午 07:32', agent: '風暴兵', project: '巡邏任務', message: '巡邏區域 A-7', type: 'info' },
+  { time: '下午 07:32', agent: '尤達', project: '代碼審查', message: '代碼審查完成', type: 'success' },
 ];
 
 function createStarWarsCharacter(agent) {
@@ -188,7 +188,7 @@ function updateAgentPositions() {
   requestAnimationFrame(updateAgentPositions);
 }
 
-function addLogMessage(agent, message, type = 'info') {
+function addLogMessage(agent, project, message, type = 'info') {
   const now = new Date();
   const hours = now.getHours();
   const period = hours >= 12 ? '下午' : '上午';
@@ -196,7 +196,7 @@ function addLogMessage(agent, message, type = 'info') {
   const minutes = String(now.getMinutes()).padStart(2, '0');
   const time = `${period}${String(displayHours).padStart(2, '0')}:${minutes}`;
   
-  logMessages.unshift({ time, agent, message, type });
+  logMessages.unshift({ time, agent, project, message, type });
   if (logMessages.length > 20) logMessages.pop();
   renderLogs();
 }
@@ -210,13 +210,14 @@ function renderLogs() {
     return `<div class="log-entry">
       <span class="log-time">${log.time}</span>
       <span class="log-agent">${log.agent}</span>
+      <span class="log-project">${log.project}</span>
       <span class="log-message" style="color: ${colors[log.type] || '#fff'}">${log.message}</span>
     </div>`;
   }).join('');
   
   // 添加標題行
   const header = document.createElement('div');
-  header.innerHTML = '<span class="log-time">時間</span><span class="log-agent">Agent</span><span class="log-message">內容</span>';
+  header.innerHTML = '<span class="log-time">時間</span><span class="log-agent">Agent</span><span class="log-project">項目</span><span class="log-message">內容</span>';
   header.className = 'log-header';
   logContainer.insertBefore(header, logContainer.firstChild);
 }
@@ -285,12 +286,14 @@ function init() {
   // 模擬日誌更新
   setInterval(() => {
     const agents = ['絕地武士', '西斯大帝', '風暴兵', '尤達', '達斯維達', 'R2-D2', 'C-3PO'];
+    const projects = ['系統監控', '安全防護', '巡邏任務', '代碼審查', '數據分析', '優化任務'];
     const messages = ['掃描系統', '檢測異常', '修復漏洞', '巡邏中', '代碼審查', '數據分析', '優化完成'];
     const types = ['info', 'warning', 'success'];
     const randomAgent = agents[Math.floor(Math.random() * agents.length)];
+    const randomProject = projects[Math.floor(Math.random() * projects.length)];
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     const randomType = types[Math.floor(Math.random() * types.length)];
-    addLogMessage(randomAgent, randomMessage, randomType);
+    addLogMessage(randomAgent, randomProject, randomMessage, randomType);
   }, 5000);
   
   console.log('🚀 Agent Office - Star Wars Theme initialized');
