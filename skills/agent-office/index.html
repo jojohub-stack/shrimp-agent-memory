@@ -91,7 +91,7 @@
     }
     .log-entry {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       padding: 6px 0;
       font-size: 11px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -100,6 +100,18 @@
     .log-time { color: #888; min-width: 45px; }
     .log-agent { color: #00CED1; min-width: 70px; font-weight: bold; }
     .log-message { color: #fff; flex: 1; }
+    .log-header {
+      display: flex;
+      gap: 8px;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(65, 105, 225, 0.5);
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .log-header .log-time { color: #666; }
+    .log-header .log-agent { color: #4169E1; }
+    .log-header .log-message { color: #aaa; }
     
     /* 動畫 */
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }

@@ -207,6 +207,12 @@ function renderLogs() {
       <span class="log-message" style="color: ${colors[log.type] || '#fff'}">${log.message}</span>
     </div>`;
   }).join('');
+  
+  // 添加標題行
+  const header = document.createElement('div');
+  header.innerHTML = '<span class="log-time">時間</span><span class="log-agent">Agent</span><span class="log-message">內容</span>';
+  header.className = 'log-header';
+  logContainer.insertBefore(header, logContainer.firstChild);
 }
 
 function renderStats() {
