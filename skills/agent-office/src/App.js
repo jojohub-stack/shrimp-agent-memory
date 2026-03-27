@@ -21,17 +21,25 @@ function createPixelCharacter(color, name) {
   
   return `
     <div class="pixel-character agent-fly" style="left: ${left}%; top: ${top}%;">
-      <svg viewBox="0 0 32 32" style="width: 30px !important; height: 30px !important;">
-        <rect x="8" y="4" width="16" height="20" fill="${color}" rx="2"/>
-        <rect x="6" y="8" width="4" height="12" fill="${color}" rx="1"/>
-        <rect x="22" y="8" width="4" height="12" fill="${color}" rx="1"/>
-        <rect x="8" y="24" width="6" height="6" fill="${color}" rx="1"/>
-        <rect x="18" y="24" width="6" height="6" fill="${color}" rx="1"/>
-        <rect x="10" y="8" width="4" height="4" fill="white" rx="1"/>
-        <rect x="18" y="8" width="4" height="4" fill="white" rx="1"/>
-        <rect x="11" y="9" width="2" height="2" fill="black"/>
-        <rect x="19" y="9" width="2" height="2" fill="black"/>
-        <rect x="12" y="16" width="8" height="2" fill="#FFB6C1" rx="1"/>
+      <svg viewBox="0 0 32 32" style="width: 30px !important; height: 30px !important;" shape-rendering="crispEdges">
+        <!-- 身體 -->
+        <rect x="10" y="10" width="12" height="14" fill="${color}" shape-rendering="crispEdges"/>
+        <!-- 頭部 -->
+        <rect x="11" y="6" width="10" height="8" fill="${color}" shape-rendering="crispEdges"/>
+        <!-- 左腿 -->
+        <rect x="11" y="24" width="4" height="5" fill="${color}" shape-rendering="crispEdges"/>
+        <!-- 右腿 -->
+        <rect x="17" y="24" width="4" height="5" fill="${color}" shape-rendering="crispEdges"/>
+        <!-- 左眼白 -->
+        <rect x="13" y="8" width="2" height="2" fill="white" shape-rendering="crispEdges"/>
+        <!-- 右眼白 -->
+        <rect x="17" y="8" width="2" height="2" fill="white" shape-rendering="crispEdges"/>
+        <!-- 左瞳孔 -->
+        <rect x="14" y="9" width="1" height="1" fill="black" shape-rendering="crispEdges"/>
+        <!-- 右瞳孔 -->
+        <rect x="18" y="9" width="1" height="1" fill="black" shape-rendering="crispEdges"/>
+        <!-- 嘴巴 -->
+        <rect x="14" y="12" width="4" height="1" fill="#FFB6C1" shape-rendering="crispEdges"/>
       </svg>
       <div class="agent-label">${name}</div>
     </div>
