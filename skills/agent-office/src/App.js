@@ -205,21 +205,29 @@ function renderLogs() {
   const logContainer = document.getElementById('log-container');
   if (!logContainer) return;
   
+  const projectColors = {
+    'Gateway 服務': '#FF6B6B',
+    'Cron 排程': '#4ECDC4',
+    '瀏覽器自動化': '#45B7D1',
+    '記憶系統': '#96CEB4',
+    '技能管理': '#FFEAA7',
+    'Notion 整合': '#DDA0DD',
+    '網格交易': '#98D8C8',
+    'GitHub 同步': '#F7DC6F',
+    '系統監控': '#BB8FCE',
+    '安全防護': '#FF7675'
+  };
+  
   logContainer.innerHTML = logMessages.map(log => {
     const colors = { info: '#4169E1', warning: '#FFA500', success: '#32CD32', error: '#FF4444' };
+    const projectColor = projectColors[log.project] || '#9370DB';
     return `<div class="log-entry">
       <span class="log-time">${log.time}</span>
       <span class="log-agent">${log.agent}</span>
-      <span class="log-project">${log.project}</span>
+      <span class="log-project" style="color: ${projectColor}">${log.project}</span>
       <span class="log-message" style="color: ${colors[log.type] || '#fff'}">${log.message}</span>
     </div>`;
   }).join('');
-  
-  // 添加標題行
-  const header = document.createElement('div');
-  header.innerHTML = '<span class="log-time">時間</span><span class="log-agent">Agent</span><span class="log-project">項目</span><span class="log-message">內容</span>';
-  header.className = 'log-header';
-  logContainer.insertBefore(header, logContainer.firstChild);
 }
 
 function renderStats() {
