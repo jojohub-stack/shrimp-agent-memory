@@ -25,11 +25,11 @@ const WORK_STATS = {
 
 // 日誌消息
 let logMessages = [
-  { time: '19:30', agent: '絕地武士', message: '開始掃描系統狀態', type: 'info' },
-  { time: '19:31', agent: '西斯大帝', message: '檢測到異常流量', type: 'warning' },
-  { time: '19:31', agent: 'R2-D2', message: '修復安全漏洞', type: 'success' },
-  { time: '19:32', agent: '風暴兵', message: '巡邏區域 A-7', type: 'info' },
-  { time: '19:32', agent: '尤達', message: '代碼審查完成', type: 'success' },
+  { time: '下午 07:30', agent: '絕地武士', message: '開始掃描系統狀態', type: 'info' },
+  { time: '下午 07:31', agent: '西斯大帝', message: '檢測到異常流量', type: 'warning' },
+  { time: '下午 07:31', agent: 'R2-D2', message: '修復安全漏洞', type: 'success' },
+  { time: '下午 07:32', agent: '風暴兵', message: '巡邏區域 A-7', type: 'info' },
+  { time: '下午 07:32', agent: '尤達', message: '代碼審查完成', type: 'success' },
 ];
 
 function createStarWarsCharacter(agent) {
@@ -189,7 +189,13 @@ function updateAgentPositions() {
 }
 
 function addLogMessage(agent, message, type = 'info') {
-  const time = new Date().toLocaleTimeString('zh-TW', { hour: '2-digit', minute: '2-digit' });
+  const now = new Date();
+  const hours = now.getHours();
+  const period = hours >= 12 ? '下午' : '上午';
+  const displayHours = hours % 12 || 12;
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const time = `${period}${String(displayHours).padStart(2, '0')}:${minutes}`;
+  
   logMessages.unshift({ time, agent, message, type });
   if (logMessages.length > 20) logMessages.pop();
   renderLogs();
