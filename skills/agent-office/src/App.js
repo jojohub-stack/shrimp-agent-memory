@@ -2,17 +2,17 @@
 // 星際大戰主題辦公室
 
 const AGENTS = [
-  { id: 1, name: '絕地武士', type: 'jedi', color: '#00CED1', x: 10, y: 20, vx: 0.3, vy: 0.2 },
-  { id: 2, name: '西斯大帝', type: 'sith', color: '#DC143C', x: 20, y: 30, vx: -0.25, vy: 0.3 },
-  { id: 3, name: '風暴兵', type: 'stormtrooper', color: '#F5F5F5', x: 30, y: 25, vx: 0.35, vy: -0.25 },
-  { id: 4, name: '尤達', type: 'yoda', color: '#90EE90', x: 40, y: 35, vx: -0.2, vy: 0.35 },
-  { id: 5, name: '達斯維達', type: 'vader', color: '#2F2F2F', x: 50, y: 40, vx: 0.25, vy: -0.3 },
-  { id: 6, name: 'R2-D2', type: 'r2d2', color: '#4169E1', x: 60, y: 30, vx: -0.3, vy: 0.25 },
-  { id: 7, name: 'C-3PO', type: 'c3po', color: '#FFD700', x: 70, y: 45, vx: 0.2, vy: -0.2 },
-  { id: 8, name: '丘巴卡', type: 'chewie', color: '#8B4513', x: 80, y: 35, vx: -0.35, vy: 0.3 },
-  { id: 9, name: '莉亞公主', type: 'leia', color: '#FFB6C1', x: 15, y: 50, vx: 0.3, vy: -0.25 },
-  { id: 10, name: '韓索羅', type: 'han', color: '#696969', x: 85, y: 20, vx: -0.25, vy: 0.2 },
-  { id: 11, name: '歐比王', type: 'obiwan', color: '#8B4513', x: 50, y: 60, vx: 0.2, vy: -0.3 },
+  { id: 1, name: '絕地武士', type: 'jedi', color: '#00CED1', x: 10, y: 20, vx: 0.15, vy: 0.1 },
+  { id: 2, name: '西斯大帝', type: 'sith', color: '#DC143C', x: 20, y: 30, vx: -0.125, vy: 0.15 },
+  { id: 3, name: '風暴兵', type: 'stormtrooper', color: '#F5F5F5', x: 30, y: 25, vx: 0.175, vy: -0.125 },
+  { id: 4, name: '尤達', type: 'yoda', color: '#90EE90', x: 40, y: 35, vx: -0.1, vy: 0.175 },
+  { id: 5, name: '達斯維達', type: 'vader', color: '#2F2F2F', x: 50, y: 40, vx: 0.125, vy: -0.15 },
+  { id: 6, name: 'R2-D2', type: 'r2d2', color: '#4169E1', x: 60, y: 30, vx: -0.15, vy: 0.125 },
+  { id: 7, name: 'C-3PO', type: 'c3po', color: '#FFD700', x: 70, y: 45, vx: 0.1, vy: -0.1 },
+  { id: 8, name: '丘巴卡', type: 'chewie', color: '#8B4513', x: 80, y: 35, vx: -0.175, vy: 0.15 },
+  { id: 9, name: '莉亞公主', type: 'leia', color: '#FFB6C1', x: 15, y: 50, vx: 0.15, vy: -0.125 },
+  { id: 10, name: '韓索羅', type: 'han', color: '#696969', x: 85, y: 20, vx: -0.125, vy: 0.1 },
+  { id: 11, name: '歐比王', type: 'obiwan', color: '#8B4513', x: 50, y: 60, vx: 0.1, vy: -0.15 },
 ];
 
 // 工作效率數據
